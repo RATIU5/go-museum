@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gohttpserver/data"
 	"html/template"
 	"net/http"
 )
@@ -18,7 +19,7 @@ func handleTemplate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	html.Execute(w, "Test")
+	html.Execute(w, data.GetAll())
 }
 
 func main() {
